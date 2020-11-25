@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("images/patt.png");
+}
+
+.header {
+    padding: 25px 0 24px 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-bottom: 1px solid white;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.row:after,
+.menu:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+[class*="col-"] {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-md-3 {
+    width: 25%;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.logo {
+    margin-top: 8px;
+}
+
+.menu li {
+    width: 25%;
+    float: left;
+    border-left: 1px solid #2c71b8;
+}
+
+.menu li:last-child {
+    border-right: 1px solid #2c71b8;
+}
+
+.menu a {
+    text-decoration: none;
+    display: block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #2c71b8;
+    font-size: 21px;
+}
+
+.menu a:hover {
+    color: white;
+    background-color: #2c71b8;
+}
+
+.row-2 {
+    width: 215px;
+    padding-right: 15px;
+    margin-top: 5px;
+}
+
+.row-1 {
+    width: 55px;
+    padding-left: 15px;
+}
+
+[class*="row-"] {
+    float: left;
+}
+
+.row-2:after,
+.row-1:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.search {
+    height: 40px;
+    border: 1px solid rgb(44, 113, 184);
+}
+
+input[type="text"] {
+    width: 156px;
+    height: 38px;
+    vertical-align: top;
+    background-color: unset;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 21px;
+    color: rgb(44, 113, 184);
+    padding: 0 0 0 19px;
+}
+
+input[type="text"]::placeholder {
+    font-size: 21px;
+    color: rgb(44, 113, 184);
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type="submit"] {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: url(images/icon4.png) no-repeat 50% 50%;
+    background-color: rgb(44, 113, 184);
+    margin: 4px;
+    padding: 0;
+}
+
+.basket {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    margin-top: 4px;
+}
+
+.basket-icon {
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.basket_q {
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    background-color: rgb(44, 113, 184);
+    border: 1px solid rgb(44, 113, 184);
+    border-radius: 10px;
+    position: relative;
+    top: -50px;
+    left: -10px;
+
+}
