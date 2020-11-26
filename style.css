@@ -104,6 +104,7 @@ body {
 }
 
 input[type="text"] {
+    /*width: 150px;*/
     width: 156px;
     height: 38px;
     vertical-align: top;
@@ -130,23 +131,21 @@ input[type="submit"] {
     cursor: pointer;
     background: url(images/icon4.png) no-repeat 50% 50%;
     background-color: rgb(44, 113, 184);
+    /*margin-top: 4px;
+    margin-left: 6px;*/
     margin: 4px;
     padding: 0;
 }
 
 .basket {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-}
-
-.basket-icon {
-    text-decoration: none;
     display: block;
     padding: 10px;
+    width: 40px;
+    height: 40px;
+    background: white url(images/icon1.png) no-repeat 50% 50%;
 }
 
-.basket_q {
+.product-count {
     display: block;
     width: 20px;
     height: 20px;
@@ -157,7 +156,6 @@ input[type="submit"] {
     border: 1px solid rgb(44, 113, 184);
     border-radius: 10px;
     position: relative;
-    top: -50px;
-    left: -10px;
-
+    top: -20px;
+    left: -20px;
 }
