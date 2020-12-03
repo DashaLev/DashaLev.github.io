@@ -215,13 +215,11 @@ body {
   padding-right: 15px;
 }
 .col-md-8 {
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding: 15px;
   width: 600px; 
 }
 .col-md-4 {
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding: 15px;
   width: 300px;
 }
 .col-md-8 h2 {
@@ -347,7 +345,7 @@ body {
   color: white;
   font-size: 21px;
   font-weight: bold;
-  background: rgba(255, 255, 255, 0.25) url(images/icon2.png) no-repeat 92% 49%;
+  background: rgba(255, 255, 255, 0.25) url(images/icon2.png) no-repeat 92% 47%;
   padding-right: 20px;
   outline: none;
   cursor: pointer;
@@ -359,4 +357,16 @@ body {
   content: "";
   display: block;
   clear: both;
+}
+.buttonloadmore {
+  padding-top: 40px;
+  text-align: center;
+}
+.loadmore {
+  font-size: 36px;
+  color: white;
+  background-color: initial;
+  border: initial;
+  outline: initial;
+  cursor: pointer;
 }
