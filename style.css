@@ -25,8 +25,7 @@ body {
   margin-right: -15px;
 }
 
-.row:after,
-.menu:after, .col-md-3:after {
+.row:after {
   content: "";
   display: block;
   clear: both;
@@ -57,7 +56,6 @@ body {
   position: relative;
 }
 
-
 .menu>li:last-child {
   border-right: 1px solid #2c71b8;
 }
@@ -85,27 +83,23 @@ body {
   background: url(images/whitearrow.png) no-repeat 92% 50%;
 }
 
-.colmd10 {
-  width: 215px;
-  padding-right: 15px;
-  margin-top: 5px;
-  float: left;
+.col-md-10 {
+  width: 76.7%;
 }
 
-.colmd2 {
-  width: 55px;
-  padding-left: 15px;
-  margin-top: 5px;
-  float: left;
+.col-md-2 {
+  width: 23.3%;
 }
 
 .search {
+  width: 200px;
   height: 40px;
   border: 1px solid rgb(44, 113, 184);
+  margin-top: 5px;
 }
 
-.search-field {
-  width: 150px;
+.searchfield {
+  width: 155px;
   height: 38px;
   vertical-align: top;
   background-color: unset;
@@ -131,8 +125,7 @@ body {
   cursor: pointer;
   background: url(images/icon4.png) no-repeat 50% 50%;
   background-color: rgb(44, 113, 184);
-  margin-top: 4px;
-  margin-left: 6px;
+  margin: 4px;
   padding: 0;
 }
 
@@ -141,9 +134,10 @@ body {
   height: 40px;
   background: white url(images/icon1.png) no-repeat 50% 50%;
   position: relative;
+  margin-top: 5px;
 }
 
-.product-count {
+.productcount {
   width: 20px;
   height: 20px;
   text-align: center;
@@ -186,48 +180,69 @@ body {
   background-color: white;
   color: rgb(44, 113, 184);
 }
+
 .slider {
   background-color: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid white;
 }
 
+.col-md-12 {
+  width: 100%;
+}
+
 .slidebar {
-  margin-left: -15px;
-  margin-right: -15px;
   text-align: center;
   height: 400px;
   line-height: 400px;
   color: white;
   font-size: 100px;
 }
-.col-md3 {
-  width: 25%;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-.sidebar {
-  background-color: rgba(255, 255, 255, 0.2);
+
+.filter {
   height: 843px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-right: 1px solid white;
 }
-.col-md9 {
+
+.breadcrums {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.breadcrums a {
+  text-decoration: none;
+  color: white;
+}
+
+.breadcrums a:hover {
+  text-decoration: underline;
+}
+
+.breadcrums span {
+  color: white;
+  text-decoration: underline;
+}
+
+.col-md-9 {
   width: 75%;
-  padding-left: 15px;
-  padding-right: 15px;
 }
+
 .col-md-8 {
-  padding: 15px;
-  width: 600px; 
+  width: 66.7%;
 }
+
 .col-md-4 {
-  padding: 15px;
-  width: 300px;
+  width: 33.3%;
 }
-.col-md-8 h2 {
+
+.title-l-t {
   color: white;
   font-size: 48px;
   font-weight: bold;
 }
-.filter {
+
+.sort {
+  margin-top: 5px;
   width: 270px;
   height: 40px;
   background: none;
@@ -236,98 +251,118 @@ body {
   color: white;
   font-size: 21px;
 }
-.filter option {
+
+.sort option {
   width: 40px;
   background-color: rgb(44, 113, 184);
 }
+
 .products {
-  float: left;
-  width: 300px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top:30px;
-}
-.product-card {
-  float: left;
+  margin-top: 30px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   background-color: rgba(44, 113, 183, 0.75);
   color: white;
 }
 
-.product-photo {
-  background-color:rgba(255, 255, 255, 0.55);
+.product-image {
+  background-color: rgba(255, 255, 255, 0.55);
   position: relative;
 }
-.p-picture {
+
+.product-image>a {
+  display: block;
+  height: 180px;
+}
+
+.product-photo {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  margin:auto;
+  margin: auto;
 }
-.product-photo a {
-  display: block;
-  height: 180px;
-}
-.lookclose {
+
+.lookclose,
+.wishlist {
   width: 30px;
   height: 30px;
-  border:  1px solid rgb(44, 113, 184);
+  border: 1px solid rgb(44, 113, 184);
   outline: none;
-  background:url(images/icon8.png) no-repeat 50% 50%;
   cursor: pointer;
   position: absolute;
   top: 10px;
   left: 228px;
 }
+
+.lookclose {
+  background: url(images/icon8.png) no-repeat 50% 50%;
+  top: 10px;
+  left: 228px;
+}
+
 .wishlist {
-  width: 30px;
-  height: 30px;
-  border:  1px solid rgb(44, 113, 184);
-  outline: none;
-  background:url(images/icon5.png) no-repeat 50% 50%;
-  cursor: pointer;
-  position: absolute;
+  background: url(images/icon5.png) no-repeat 50% 50%;
   top: 50px;
   left: 228px;
 }
-.product-name {
-  padding-top: 20px;
+
+.lookclose:hover {
+  background: rgb(44, 113, 184) url(images/icon6.png) no-repeat 50% 50%;
+}
+
+.wishlist:hover {
+  background: rgb(44, 113, 184) url(images/icon7.png) no-repeat 50% 50%;
+}
+
+[class*="product-"] {
+  padding-top: 15px;
   padding-left: 15px;
+}
+
+.product-name {
   font-size: 30px;
   font-weight: bold;
 }
+
 .product-discription {
-  padding-top: 20px;
   font-size: 21px;
   line-height: 1.5em;
-  padding-left: 15px;
   padding-right: 20px;
 }
+
 .product-features {
-  padding-top: 20px;
-  padding-left: 15px;
   font-size: 21px;
 }
+
 .product-features span {
   font-weight: bold;
 }
+
 .product-price {
   padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 48px;
   font-weight: bold;
   text-align: center;
-  padding-bottom: 10px;
 }
+
 .product-price sup {
   font-size: 21px;
 }
-.details, .addtocart {
+
+.details,
+.addtocart {
   text-align: center;
-  padding-top: 20px;
 }
-.details button{
+
+.addtocart {
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.details button,
+.addtocart button {
   width: 210px;
   height: 50px;
   border: 1px solid white;
@@ -338,31 +373,23 @@ body {
   outline: none;
   cursor: pointer;
 }
+
 .addtocart button {
-  width: 210px;
-  height: 50px;
-  border: none;
-  color: white;
-  font-size: 21px;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.25) url(images/icon2.png) no-repeat 92% 47%;
+  background: url(images/icon2.png) no-repeat 92% 47%;
   padding-right: 20px;
-  outline: none;
-  cursor: pointer;
 }
-.addtocart {
-  padding-bottom: 15px;
+
+.details button:hover,
+.addtocart button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
-.products:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-.buttonloadmore {
-  padding-top: 40px;
+
+.loadmore {
+  padding-top: 30px;
   text-align: center;
 }
-.loadmore {
+
+.loadmore button {
   font-size: 36px;
   color: white;
   background-color: initial;
