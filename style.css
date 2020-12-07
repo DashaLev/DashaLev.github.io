@@ -369,13 +369,13 @@ body {
   color: white;
   font-size: 21px;
   font-weight: bold;
-  background-color: inherit;
+  background-color:  rgb(44, 113, 184);
   outline: none;
   cursor: pointer;
 }
 
 .addtocart button {
-  background: url(images/icon2.png) no-repeat 92% 47%;
+  background:  rgb(44, 113, 184) url(images/icon2.png) no-repeat 92% 47%;
   padding-right: 20px;
 }
 
