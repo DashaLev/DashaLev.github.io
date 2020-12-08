@@ -298,13 +298,13 @@ body {
 .lookclose {
   background: url(images/icon8.png) no-repeat 50% 50%;
   top: 10px;
-  left: 228px;
+  right: 10px;
 }
 
 .wishlist {
   background: url(images/icon5.png) no-repeat 50% 50%;
   top: 50px;
-  left: 228px;
+  right: 10px;
 }
 
 .lookclose:hover {
