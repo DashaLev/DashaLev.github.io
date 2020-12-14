@@ -199,9 +199,52 @@ body {
 }
 
 .filter {
+  padding-left: 30px;
   height: 843px;
   background-color: rgba(255, 255, 255, 0.2);
   border-right: 1px solid white;
+}
+.filter-option {
+  padding-top: 33px;
+  padding-bottom: 22px;
+}
+
+.filter-title {
+  color: white;
+  font-size: 21px;
+  font-weight: bold;
+}
+.filter-menu span {
+  color: white;
+  font-size: 21px;
+  padding-left: 10px;
+  vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+  display: none;
+}
+label:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  margin-top: 23px;
+}
+input[type="checkbox"]:checked + label:before {
+  background-color: white;
+}
+
+.showmoreoptions {
+  padding-top: 8px;
+  padding-bottom: 15px;
+}
+.showmoreoptions a {
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+  cursor: pointer;
 }
 
 .breadcrums {
@@ -356,13 +399,13 @@ body {
   text-align: center;
 }
 
-.addtocart {
+.addtocart, .filtersubmit  {
   padding-top: 15px;
   padding-bottom: 30px;
 }
 
 .details button,
-.addtocart button {
+.addtocart button, .filtersubmit button {
   width: 210px;
   height: 50px;
   border: 1px solid white;
@@ -380,20 +423,29 @@ body {
 }
 
 .details button:hover,
-.addtocart button:hover {
+.addtocart button:hover, .filtersubmit button:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
 .loadmore {
   padding-top: 30px;
   text-align: center;
+  padding-bottom: 90px;
 }
 
-.loadmore button {
+.loadmore a {
+  text-decoration: none;
   font-size: 36px;
   color: white;
-  background-color: initial;
-  border: initial;
-  outline: initial;
   cursor: pointer;
+}
+
+.footer {
+  padding: 40px 0 39px 0;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+.footer-info {
+  font-size: 21px;
+  color: #2c71b8;
+  text-align: center;
 }
