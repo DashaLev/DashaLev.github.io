@@ -64,5 +64,109 @@ likedButtons.forEach((btn) => {
 })
 
 
+// product number
+
+// let decrementBtns = document.querySelectorAll(".decrement-button");
+// let incrementBtns = document.querySelectorAll(".increment-button");
+// let quantityValue = document.querySelectorAll(".product-quantity input");
+// let minCount = 1;
+// let maxCount = 5;
+// let currentCount = +quantityValue.value;
+
+
+// function toggleBtnState (count) {
+//     decrementBtns.disabled = count <= minCount;
+//     incrementBtns.disabled = count >= maxCount;
+// }
+// toggleBtnState(currentCount) 
+
+// incrementBtns.addEventListener("click",function(){
+//     quantityValue.value = +quantityValue.value + 1;
+//     // let currentCount = +quantityValue.value;
+//     // let nextCount = currentCount + 1;
+//     // quantityValue.value = nextCount;
+//     toggleBtnState(quantityValue.value)
+// })
+
+// decrementBtns.addEventListener("click",function(){
+//     quantityValue.value = +quantityValue.value - 1;
+//     // let currentCount = +quantityValue.value;
+//     // let nextCount = currentCount - 1;
+//     // quantityValue.value = nextCount;
+//     toggleBtnState(quantityValue.value)
+// })
+
+
+
+
+
+
+
+
+let decrementBtns = document.getElementsByClassName("decrement-button");
+let incrementBtns = document.getElementsByClassName("increment-button");
+let quantityValue = document.querySelectorAll(".product-quantity input");
+let minCount = 1;
+let maxCount = 5;
+
+function toggleDecrementBtnState() {
+    for(let i=0; i < quantityValue.length; i++) {
+        if( quantityValue[i].value <= 1) {
+            decrementBtns[i].disabled = true;
+        } else {
+            decrementBtns[i].disabled = false;
+                        
+        }
+    }
+}
+toggleDecrementBtnState()
+
+for(let i=0; i < incrementBtns.length;i++) {
+    let btn = incrementBtns[i];
+    btn.addEventListener('click',function(e){
+        let btnClicked = e.target;
+        let input = btnClicked.parentElement.children[1];
+        let inputValue = input.value;
+        input.value = +inputValue + 1;
+        if(input.value < 5) {
+            incrementBtns[i].disabled = false;
+        } else {
+            incrementBtns[i].disabled = true;
+        }
+        if(input.value > 1) {
+            decrementBtns[i].disabled = false;
+        } else {
+            decrementBtns[i].disabled = true;
+        }
+    
+    })
+}
+
+for(let i=0; i < decrementBtns.length;i++) {
+    let btn = decrementBtns[i];
+    btn.addEventListener('click',function(e){
+        let btnClicked = e.target;
+        let input = btnClicked.parentElement.children[1];
+        let inputValue = input.value;
+        input.value = +inputValue - 1;
+        if(input.value > 1) {
+            decrementBtns[i].disabled = false;
+        } else {
+            decrementBtns[i].disabled = true;
+        }
+        if(input.value <= 5) {
+            incrementBtns[i].disabled = false;
+        } else {
+            incrementBtns[i].disabled = true;
+        }
+       
+    })
+}
+
+
+
+
+
+
 
 
