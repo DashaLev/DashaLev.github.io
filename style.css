@@ -473,8 +473,8 @@ input[type="checkbox"]:checked + label:before {
   font-size: 18px;
   font-weight: bold;
 }
+
 .form-callback button {
-  margin-top: 5px;
   height: 30px;
   background-color: rgba(44, 113, 183);
   outline: none;
@@ -493,9 +493,22 @@ input[type="checkbox"]:checked + label:before {
   border: 1px solid grey;
 }
 .btn-close {
-  text-align: right;
-  color: red;
+  text-align:center;
+  color:white;
   font-weight: bold;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background-color: red;
+  border-radius: 4px;
+  font-size: 14px;
+  float:right;
+}
+.close:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .hide {
   display: none;
