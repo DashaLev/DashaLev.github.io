@@ -1,4 +1,5 @@
 // add to card
+
 let productsCountEl = document.getElementById("products-count");
 let addToCartButtons = document.querySelectorAll(".addtocart");
 
@@ -7,12 +8,12 @@ for(let i = 0; i < addToCartButtons.length;i++ ) {
         productsCountEl.textContent = +productsCountEl.textContent + 1;
     })
 }
+
 // modal
 
 let modal = document.querySelector(".modal");
 let moreDetailsBtns = document.querySelectorAll(".details");
 let closeBtn = document.querySelector(".btn-close");
-
 
 moreDetailsBtns.forEach((btn) => {
     btn.addEventListener("click",openModal)
@@ -66,20 +67,20 @@ likedButtons.forEach((btn) => {
 
 // product number
 
+    // for 1 element
+
 // let decrementBtns = document.querySelectorAll(".decrement-button");
 // let incrementBtns = document.querySelectorAll(".increment-button");
 // let quantityValue = document.querySelectorAll(".product-quantity input");
 // let minCount = 1;
 // let maxCount = 5;
+
 // let currentCount = +quantityValue.value;
-
-
 // function toggleBtnState (count) {
 //     decrementBtns.disabled = count <= minCount;
 //     incrementBtns.disabled = count >= maxCount;
 // }
 // toggleBtnState(currentCount) 
-
 // incrementBtns.addEventListener("click",function(){
 //     quantityValue.value = +quantityValue.value + 1;
 //     // let currentCount = +quantityValue.value;
@@ -87,7 +88,6 @@ likedButtons.forEach((btn) => {
 //     // quantityValue.value = nextCount;
 //     toggleBtnState(quantityValue.value)
 // })
-
 // decrementBtns.addEventListener("click",function(){
 //     quantityValue.value = +quantityValue.value - 1;
 //     // let currentCount = +quantityValue.value;
@@ -97,76 +97,114 @@ likedButtons.forEach((btn) => {
 // })
 
 
+    // FOR
+
+// let decrementBtns = document.querySelectorAll(".decrement-button");
+// let incrementBtns = document.querySelectorAll(".increment-button");
+// let quantityValue = document.querySelectorAll(".product-quantity input");
+// let minCount = 1;
+// let maxCount = 5;
+
+// for(let i=0; i < quantityValue.length; i++) {
+//     let currentCount = +quantityValue[i].value;                      
+//     toggleBtnState(currentCount, decrementBtns[i], incrementBtns[i]) 
+// }
+// function toggleBtnState (count, decrementBtn, incrementBtn) {
+//     decrementBtn.disabled = count <= minCount;
+//     incrementBtn.disabled = count >= maxCount;
+// }
+// for(let i=0; i < incrementBtns.length;i++) {
+//     incrementBtns[i].addEventListener("click",function(){
+//         let currentCount = +quantityValue[i].value;
+//         let nextCount = currentCount + 1;
+//         quantityValue[i].value = nextCount;
+//         toggleBtnState(nextCount, decrementBtns[i], incrementBtns[i])
+//    })
+// }
+// for(let i=0; i < decrementBtns.length;i++) {
+//     decrementBtns[i].addEventListener("click",function(){
+//         let currentCount = +quantityValue[i].value;
+//         let nextCount = currentCount - 1;
+//         quantityValue[i].value = nextCount;
+//         toggleBtnState(nextCount, decrementBtns[i], incrementBtns[i])
+//    })
+// }
 
 
+    // for each
+
+// let decrementBtns = document.querySelectorAll(".decrement-button");
+// let incrementBtns = document.querySelectorAll(".increment-button");
+// let quantityValue = document.querySelectorAll(".product-quantity input");
+// let minCount = 1;
+// let maxCount = 5;
+
+// quantityValue.forEach((item,i)=> {
+//     toggleBtnState(item.value, decrementBtns[i], incrementBtns[i])
+// })
+// function toggleBtnState (count, decrementBtn, incrementBtn) {
+//     decrementBtn.disabled = count <= minCount;
+//     incrementBtn.disabled = count >= maxCount;
+// }
+// incrementBtns.forEach((item,i)=> {
+//     item.addEventListener("click",function() {
+//         quantityValue[i].value = +quantityValue[i].value + 1;
+//         toggleBtnState(quantityValue[i].value, decrementBtns[i], incrementBtns[i])
+//    })
+// })
+// decrementBtns.forEach((item,i)=> {
+//     item.addEventListener("click",function() {
+//         quantityValue[i].value = +quantityValue[i].value - 1;
+//         toggleBtnState(quantityValue[i].value, decrementBtns[i], incrementBtns[i])
+//    })
+// })
 
 
+    // function constructor product number
 
-
-let decrementBtns = document.getElementsByClassName("decrement-button");
-let incrementBtns = document.getElementsByClassName("increment-button");
+let decrementBtns = document.querySelectorAll(".decrement-button");
+let incrementBtns = document.querySelectorAll(".increment-button");
 let quantityValue = document.querySelectorAll(".product-quantity input");
-let minCount = 1;
-let maxCount = 5;
-
-function toggleDecrementBtnState() {
-    for(let i=0; i < quantityValue.length; i++) {
-        if( quantityValue[i].value <= 1) {
-            decrementBtns[i].disabled = true;
-        } else {
-            decrementBtns[i].disabled = false;
-                        
-        }
+ 
+function Counter(incrementBtn,decrementBtn,inputField,minCount = 1,maxCount = 5) {
+    // this.incrementBtn = incrementBtn;
+    // this.decrementBtn = decrementBtn;
+    // this.inputField = inputField;
+    this.domRefs = {
+        incrementBtn,
+        decrementBtn,
+        inputField
     }
+    this.toggleButtonState = function() {
+        let count = this.domRefs.inputField.value;
+        this.domRefs.decrementBtn.disabled = count <= minCount;
+        this.domRefs.incrementBtn.disabled = count >= maxCount;
+    }
+    this.toggleButtonState();
+    this.increment = function() {
+        let currentCount = +this.domRefs.inputField.value;
+        let nextCount = currentCount + 1;
+        this.domRefs.inputField.value = nextCount;   
+        this.toggleButtonState()
+    }
+    this.decrement = function() {
+        let currentCount = +this.domRefs.inputField.value;
+        let nextCount = currentCount - 1;
+        this.domRefs.inputField.value = nextCount;   
+        this.toggleButtonState()
+    }
+    this.domRefs.incrementBtn.addEventListener("click", this.increment.bind(this))
+    this.domRefs.decrementBtn.addEventListener("click", this.decrement.bind(this))
 }
-toggleDecrementBtnState()
-
-for(let i=0; i < incrementBtns.length;i++) {
-    let btn = incrementBtns[i];
-    btn.addEventListener('click',function(e){
-        let btnClicked = e.target;
-        let input = btnClicked.parentElement.children[1];
-        let inputValue = input.value;
-        input.value = +inputValue + 1;
-        if(input.value < 5) {
-            incrementBtns[i].disabled = false;
-        } else {
-            incrementBtns[i].disabled = true;
-        }
-        if(input.value > 1) {
-            decrementBtns[i].disabled = false;
-        } else {
-            decrementBtns[i].disabled = true;
-        }
-    
-    })
-}
-
-for(let i=0; i < decrementBtns.length;i++) {
-    let btn = decrementBtns[i];
-    btn.addEventListener('click',function(e){
-        let btnClicked = e.target;
-        let input = btnClicked.parentElement.children[1];
-        let inputValue = input.value;
-        input.value = +inputValue - 1;
-        if(input.value > 1) {
-            decrementBtns[i].disabled = false;
-        } else {
-            decrementBtns[i].disabled = true;
-        }
-        if(input.value <= 5) {
-            incrementBtns[i].disabled = false;
-        } else {
-            incrementBtns[i].disabled = true;
-        }
-       
-    })
+for(let i=0; i < quantityValue.length;i++) {
+    const counter = new Counter(incrementBtns[i],decrementBtns[i],quantityValue[i]);
 }
 
 
 
+// slider
 
 
-
-
-
+$('.slidebar').slick({
+    dots:true,
+});
