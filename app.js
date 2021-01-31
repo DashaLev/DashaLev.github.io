@@ -3,9 +3,11 @@
 let productsCountEl = document.getElementById("products-count");
 let addToCartButtons = document.querySelectorAll(".addtocart");
 
+
 for(let i = 0; i < addToCartButtons.length;i++ ) {
     addToCartButtons[i].addEventListener("click", function (){
-        productsCountEl.textContent = +productsCountEl.textContent + 1;
+        productsCountEl.textContent = +productsCountEl.textContent + +quantityValue[i].value;
+        quantityValue[i].value = 1;
     })
 }
 
